@@ -1,0 +1,249 @@
+/* ============================================
+   AR.css — Anurag Kedar Resume
+   Aesthetic: Editorial Blueprint / Engineering Draftsman
+   Palette: Deep navy + warm ivory + amber accent
+   ============================================ */
+
+   @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Poppins:wght@300;400;600&display=swap');
+
+   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+   
+   :root {
+     --navy:       #0d1b2a;
+     --navy-mid:   #1a2d42;
+     --navy-light: #243b55;
+     --ivory:      #f5f0e8;
+     --amber:      #d4900a;
+     --amber-light:#f0b429;
+     --amber-glow: rgba(212, 144, 10, 0.15);
+     --text-main:  #f5f0e8;
+     --text-dim:   #9aacbd;
+     --grid-line:  rgba(212, 144, 10, 0.08);
+     --font-display: 'DM Serif Display', Georgia, serif;
+     --font-mono:    'DM Mono', 'Courier New', monospace;
+     --font-body:    'Poppins', sans-serif;
+   }
+   
+   html { scroll-behavior: smooth; }
+   
+   body {
+     background-color: var(--navy);
+     color: var(--text-main);
+     font-family: var(--font-body);
+     font-weight: 300;
+     line-height: 1.7;
+     min-height: 100vh;
+     overflow-x: hidden;
+     background-image:
+       linear-gradient(var(--grid-line) 1px, transparent 1px),
+       linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+       radial-gradient(ellipse at 20% 0%, rgba(26,45,66,0.9) 0%, transparent 60%),
+       radial-gradient(ellipse at 80% 100%, rgba(212,144,10,0.06) 0%, transparent 50%);
+     background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
+   }
+   
+   ::-webkit-scrollbar { width: 6px; }
+   ::-webkit-scrollbar-track { background: var(--navy); }
+   ::-webkit-scrollbar-thumb { background: var(--amber); border-radius: 3px; }
+   
+   /* ── Header ── */
+   header {
+     position: relative;
+     background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-mid) 60%, var(--navy) 100%);
+     border-bottom: 1px solid rgba(212,144,10,0.3);
+     padding: 4rem 5vw 3rem;
+     overflow: hidden;
+   }
+   header::before {
+     content: ''; position: absolute; top: -60px; right: -60px;
+     width: 300px; height: 300px;
+     border: 1px solid rgba(212,144,10,0.12); border-radius: 50%; pointer-events: none;
+   }
+   header::after {
+     content: ''; position: absolute; top: -30px; right: -30px;
+     width: 180px; height: 180px;
+     border: 1px solid rgba(212,144,10,0.2); border-radius: 50%; pointer-events: none;
+   }
+   header > h1::before {
+     content: '//';
+     font-family: var(--font-mono); font-size: 1rem;
+     color: var(--amber); margin-right: 0.6rem; opacity: 0.7;
+   }
+   header h1 {
+     font-family: var(--font-display);
+     font-size: clamp(2.4rem, 6vw, 4.5rem);
+     font-weight: 400; letter-spacing: -0.02em;
+     color: var(--ivory); line-height: 1.1;
+     animation: fadeSlideDown 0.8s ease both;
+   }
+   header p.tagline {
+     font-family: var(--font-mono); font-size: 0.8rem;
+     letter-spacing: 0.22em; text-transform: uppercase;
+     color: var(--amber); margin-top: 0.6rem;
+     animation: fadeSlideDown 0.8s 0.15s ease both;
+   }
+   
+   /* ── Contact Bar ── */
+   .contact-bar {
+     display: flex; flex-wrap: wrap; gap: 0.6rem 2rem;
+     margin-top: 1.2rem;
+     animation: fadeSlideDown 0.8s 0.25s ease both;
+   }
+   .contact-item {
+     display: flex; align-items: center; gap: 0.45rem;
+     font-family: var(--font-mono); font-size: 0.75rem;
+     color: var(--text-dim); text-decoration: none;
+     letter-spacing: 0.04em; transition: color 0.2s;
+   }
+   .contact-item:hover { color: var(--amber-light); }
+   .contact-icon { font-size: 0.85rem; line-height: 1; }
+   
+   /* ── Nav ── */
+   nav {
+     display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+     margin-top: 2rem;
+     animation: fadeSlideDown 0.8s 0.35s ease both;
+   }
+   nav a {
+     font-family: var(--font-mono); font-size: 0.72rem;
+     letter-spacing: 0.18em; text-transform: uppercase;
+     color: var(--text-dim); text-decoration: none;
+     padding: 0.35rem 0.8rem;
+     border: 1px solid transparent; border-radius: 2px;
+     transition: color 0.25s, border-color 0.25s, background 0.25s;
+   }
+   nav a:hover {
+     color: var(--amber-light);
+     border-color: rgba(212,144,10,0.4);
+     background: var(--amber-glow);
+   }
+   
+   /* ── Container ── */
+   .container {
+     max-width: 860px; margin: 0 auto;
+     padding: 3rem 5vw 6rem;
+     display: flex; flex-direction: column;
+   }
+   
+   /* ── Sections ── */
+   section {
+     position: relative;
+     padding: 2.8rem 0;
+     border-bottom: 1px solid rgba(212,144,10,0.1);
+     animation: fadeSlideUp 0.6s ease both;
+   }
+   section:last-child { border-bottom: none; }
+   section:nth-child(1) { animation-delay: 0.1s; }
+   section:nth-child(2) { animation-delay: 0.2s; }
+   section:nth-child(3) { animation-delay: 0.3s; }
+   section:nth-child(4) { animation-delay: 0.4s; }
+   section:nth-child(5) { animation-delay: 0.5s; }
+   section:nth-child(6) { animation-delay: 0.6s; }
+   section:nth-child(7) { animation-delay: 0.7s; }
+   section::before {
+     content: attr(id); position: absolute; top: 2.8rem; right: 0;
+     font-family: var(--font-mono); font-size: 0.6rem;
+     letter-spacing: 0.2em; text-transform: uppercase;
+     color: rgba(212,144,10,0.3);
+   }
+   
+   /* ── Headings ── */
+   h2 {
+     font-family: var(--font-display);
+     font-size: clamp(1.4rem, 3vw, 1.9rem);
+     font-weight: 400; font-style: italic;
+     color: var(--ivory); margin-bottom: 1.4rem;
+     display: flex; align-items: center; gap: 1rem;
+   }
+   h2::after {
+     content: ''; flex: 1; height: 1px;
+     background: linear-gradient(to right, rgba(212,144,10,0.4), transparent);
+     max-width: 200px;
+   }
+   
+   /* ── Paragraphs ── */
+   p {
+     font-size: 0.92rem; color: var(--text-dim);
+     margin-bottom: 1rem; max-width: 680px;
+   }
+   p strong { color: var(--ivory); font-weight: 600; }
+   
+   /* ── Lists ── */
+   ul { list-style: none; display: flex; flex-direction: column; gap: 1.2rem; max-width: 700px; }
+   li {
+     position: relative; padding-left: 1.6rem;
+     font-size: 0.92rem; color: var(--text-dim); line-height: 1.75;
+   }
+   li::before {
+     content: '▸'; position: absolute; left: 0; top: 0.05em;
+     color: var(--amber); font-size: 0.8rem;
+   }
+   li strong {
+     display: block; color: var(--ivory);
+     font-weight: 600; font-size: 0.96rem; margin-bottom: 0.2rem;
+   }
+   
+   /* ── Skills ── */
+   .skills p {
+     display: flex; gap: 0.6rem;
+     align-items: baseline; flex-wrap: wrap; margin-bottom: 0.7rem;
+   }
+   .skills p strong {
+     font-family: var(--font-mono); font-size: 0.7rem;
+     letter-spacing: 0.12em; text-transform: uppercase;
+     color: var(--amber); white-space: nowrap; min-width: 120px;
+   }
+   
+   /* ── Education Cards ── */
+   #education p {
+     background: var(--navy-mid);
+     border: 1px solid rgba(212,144,10,0.12);
+     border-left: 3px solid var(--amber);
+     border-radius: 4px; padding: 1rem 1.2rem; max-width: 100%;
+     transition: border-color 0.2s, background 0.2s;
+   }
+   #education p:hover {
+     border-left-color: var(--amber-light);
+     background: rgba(26,45,66,0.9);
+   }
+   
+   /* ── Interest Tags ── */
+   .interest-tags { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+   .tag {
+     font-family: var(--font-mono); font-size: 0.72rem;
+     letter-spacing: 0.14em; text-transform: uppercase;
+     color: var(--amber-light);
+     background: var(--amber-glow);
+     border: 1px solid rgba(212,144,10,0.3);
+     border-radius: 3px; padding: 0.4rem 1rem;
+     cursor: default;
+     transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.15s;
+   }
+   .tag:hover {
+     background: rgba(212,144,10,0.25);
+     border-color: var(--amber);
+     color: var(--ivory);
+     transform: translateY(-2px);
+   }
+   
+   /* ── Animations ── */
+   @keyframes fadeSlideDown {
+     from { opacity: 0; transform: translateY(-18px); }
+     to   { opacity: 1; transform: translateY(0); }
+   }
+   @keyframes fadeSlideUp {
+     from { opacity: 0; transform: translateY(22px); }
+     to   { opacity: 1; transform: translateY(0); }
+   }
+   
+   /* ── Responsive ── */
+   @media (max-width: 600px) {
+     header { padding: 3rem 1.2rem 2rem; }
+     .container { padding: 2rem 1.2rem 4rem; }
+     .skills p { flex-direction: column; gap: 0.2rem; }
+     .skills p strong { min-width: auto; }
+     nav { gap: 0.4rem 1rem; }
+     .contact-bar { gap: 0.5rem 1rem; }
+     .contact-item { font-size: 0.68rem; }
+     .interest-tags { gap: 0.5rem; }
+   }
